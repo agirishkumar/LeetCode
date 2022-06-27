@@ -1,7 +1,11 @@
 class Solution {
     public int maxRepeating(String sequence, String word) {
-        String find="";
-        while(sequence.contains(find)) find += word;
-        return (find.length()-word.length())/word.length();
+        int count = 0;
+        String temp = word;
+        while(sequence.contains(temp)){
+            count++;
+            temp+=word;
+        }
+        return count;
     }
 }
