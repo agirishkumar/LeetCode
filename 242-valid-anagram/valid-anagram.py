@@ -4,20 +4,13 @@ class Solution:
         if len(s) != len(t):
             return False
 
-        charcaters_s = {}
-
-        for i in s:
-            if i in charcaters_s:
-                charcaters_s[i] += 1
-            else:
-                charcaters_s[i] = 1
+        if set(s) != set(t):
+            return False
         
-        for i in t:
-            if i not in charcaters_s or charcaters_s[i] == 0:
+        for i in set(s):
+            if s.count(i) != t.count(i):
                 return False
-            else:
-                charcaters_s[i] -=1
-            
+        
         return True
 
         
